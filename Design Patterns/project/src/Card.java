@@ -3,6 +3,9 @@ public class Card implements Comparable<Card> {
     private int number;
     // The type of card: ♠-4, ♥-3, ♣-2. ♦-1
     private int type;
+    // Joker
+    // private int redJoker = 53;
+    // private int blackJoker = 54;
 
     public Card() {
         super();
