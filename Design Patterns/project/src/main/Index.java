@@ -91,6 +91,11 @@ public class Index extends MainApp {
                     break;
                 case 4:
                     // doGame4();
+                    show("a new poker");
+                    CardList.generateCard();
+                    CardList.printCardList();
+                    show("starting");
+
                     break;
             }
 

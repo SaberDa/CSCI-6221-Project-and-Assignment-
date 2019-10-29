@@ -9,6 +9,7 @@ public class Players implements Comparable<Players> {
     private String id;
     private String name;
     private List<Card> poker;
+    private Card max;
 
     public Players(String id, String name) {
         this.id = id;
@@ -37,8 +38,18 @@ public class Players implements Comparable<Players> {
     }
 
     public void setPoker(List<Card> poker) {
+
         this.poker = poker;
+        Collections.sort(this.poker);
+        for (Card card : this.poker) {
+            this.setMax(card);
+            break;
+        }
     }
+
+    public Card getMax() { return max;}
+
+    public void setMax(Card max) { this.max = max; }
 
     public String toString() {
         return "Player's ID is " + this.id + "\t" + "Player's name is " + this.name;
@@ -55,6 +66,6 @@ public class Players implements Comparable<Players> {
 
     @Override
     public int compareTo(Players o) {
-        return 0;
+        return this.max.compareTo(o.getMax());
     }
 }

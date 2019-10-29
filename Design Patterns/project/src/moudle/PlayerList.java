@@ -1,6 +1,7 @@
 package moudle;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PlayerList{
@@ -49,8 +50,10 @@ public class PlayerList{
     }
 
     public static void showWinner(int num) {
-        int winner = num - 1;
-        Players p = playerList.get(winner);
+//        int winner = num - 1;
+        Collections.sort(playerList);
+        Players p = playerList.get(0);
+        show(p.showCard());
         show("The WINNER is: " + p.getName());
     }
 
