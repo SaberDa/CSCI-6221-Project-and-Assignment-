@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class CardList {
+public class CardList extends Card{
     // Store the cards
     public static List<Card> cardList = new ArrayList<Card>(52);
     // Store the result of the deal
