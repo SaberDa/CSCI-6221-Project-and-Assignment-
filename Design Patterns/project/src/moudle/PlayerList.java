@@ -3,7 +3,7 @@ package moudle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerList {
+public class PlayerList{
     public static List<Players> playerList = new ArrayList<Players>();
     public static int sum;
     public static List<String> rules = new ArrayList<String>();

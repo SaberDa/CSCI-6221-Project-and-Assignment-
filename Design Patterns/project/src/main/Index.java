@@ -10,6 +10,11 @@ public class Index extends MainApp {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        show("  ####    ###    #####    ####           ####      ###    ###    ###  #####  ");
+        show(" ##      ## ##   ##  ##   ##  ##        ##        ## ##   ## #  # ##  ##     ");
+        show(" ##     ##   ##  #####    ##  ##        ##  ###  ##   ##  ##  ##  ##  #####  ");
+        show(" ##     #######  ##  ##   ##  ##        ##   ##  #######  ##      ##  ##     ");
+        show("  ####  ##   ##  ##   ##  ####           ####    ##   ##  ##      ##  #####  ");
         show("Are you READY?");
         show("Press 1 to ENTER game");
         show("Press 0 to EXIT game");
