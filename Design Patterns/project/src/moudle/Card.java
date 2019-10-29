@@ -85,16 +85,16 @@ public class Card implements Comparable<Card> {
         String str = "";
         switch(this.type) {
             case 1:
-                str = "Diamond";
+                str = "♦ ";
                 break;
             case 2:
-                str = "Club";
+                str = "♣ ";
                 break;
             case 3:
-                str = "Heart";
+                str = "♥ ";
                 break;
             case 4: 
-                str = "Spade";
+                str = "♠ ";
                 break;
         }
         String num = "";
@@ -110,6 +110,9 @@ public class Card implements Comparable<Card> {
                 break;
             case 13:
                 num = "K";
+                break;
+            default:
+                num = Integer.toString(this.number);
                 break;
         }
         return str+num;

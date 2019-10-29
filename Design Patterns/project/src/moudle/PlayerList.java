@@ -9,6 +9,7 @@ public class PlayerList{
     public static int sum;
     public static List<String> rules = new ArrayList<String>();
 
+
     public PlayerList() {
 
     }
@@ -49,12 +50,11 @@ public class PlayerList{
         }
     }
 
-    public static void showWinner(int num) {
-//        int winner = num - 1;
+    public static void showWinner() {
         Collections.sort(playerList);
         Players p = playerList.get(0);
-        show(p.showCard());
-        show("The WINNER is: " + p.getName());
+//        show(p.showCard());
+        show("The winner is ："+p.getName());
     }
 
     public static int size() {

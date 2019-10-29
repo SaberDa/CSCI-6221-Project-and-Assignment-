@@ -22,28 +22,18 @@ public class Index extends MainApp {
         if (isStart == 1) {
             show("There are game rules:");
             show("We have prepared four games for you.");
-            show("1. ");
-            show("2. ");
-            show("3. ");
-            show("4. ");
+            show("1. Blackjack");
+            show("2. Poker");
             show("Input the number of game you want to play");
             int game = scanner.nextInt();
             switch (game) {
                 case 1:
-                    show("You choose the first game --");
+                    show("You choose the first game -- Blackjack");
                     startGame(1);
                     break;
                 case 2:
-                    show("You choose the second game --");
+                    show("You choose the second game -- Poker");
                     startGame(2);
-                    break;
-                case 3:
-                    show("You choose the third game --");
-                    startGame(3);
-                    break;
-                case 4:
-                    show("You choose the forth game --");
-                    startGame(4);
                     break;
             }
         } else {
@@ -52,7 +42,7 @@ public class Index extends MainApp {
     }
 
     public static void startGame(int gameNum) {
-        show("Please input players' number");
+        show("Please input number of players");
         int players = 2;
         int cardOfPlay = 2;
         try {
@@ -62,14 +52,14 @@ public class Index extends MainApp {
                 show("Please input the player number again");
                 players = scanner.nextInt();
             }
-
-            show("Please input the card number of each players");
-            cardOfPlay = scanner.nextInt();
-            while (cardOfPlay * players > 52) {
-                show("The total cards are out of range");
-                show("Please input the card number again");
-                cardOfPlay = scanner.nextInt();
-            }
+//
+//            show("Please input the card number of each players");
+//            cardOfPlay = scanner.nextInt();
+//            while (cardOfPlay * players > 52) {
+//                show("The total cards are out of range");
+//                show("Please input the card number again");
+//                cardOfPlay = scanner.nextInt();
+//            }
 
             show("Input the player's information");
             for (int i = 0; i < players; i++) {
@@ -81,20 +71,12 @@ public class Index extends MainApp {
             
             switch (gameNum) {
                 case 1:
-                    // doGame1();
+                    cardOfPlay = 2;
+                    playGame(players, cardOfPlay, "You selected Blackjack");
                     break;
                 case 2:
-                    // doGame2();
-                    break;
-                case 3:
-                    // doGame3();
-                    break;
-                case 4:
-                    // doGame4();
-                    show("a new poker");
-                    CardList.generateCard();
-                    CardList.printCardList();
-                    show("starting");
+                    cardOfPlay = 5;
+                    playGame(players, cardOfPlay, "You selected Poker");
 
                     break;
             }
@@ -102,6 +84,19 @@ public class Index extends MainApp {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void playGame(int players, int cardOfPlay, String message) {
+        show(message);
+        CardList.generateCard();
+        CardList.printCardList();
+        show("Let's start");
+        CardList.shuffleCard();
+        CardList.printCardList();
+        CardList.dealCard(players, cardOfPlay);
+        PlayerList.shuffleCardToPlayer();
+        PlayerList.showCard();
+        PlayerList.showWinner();
     }
 
     public static void clearGame(){

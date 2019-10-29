@@ -47,6 +47,10 @@ public class Players implements Comparable<Players> {
         }
     }
 
+    public void setCards(int numberOfCards, int counter){
+
+    }
+
     public Card getMax() { return max;}
 
     public void setMax(Card max) { this.max = max; }
