@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
         id: "Lines",
       )
     ];
-    //是TimeSeriesChart，而不是LineChart,因为x轴是DataTime类
+    //It is TimeSeriesChart, not LineChart, because the x-axis is the DataTime class.
     Widget line = charts.TimeSeriesChart(seriesLine);
     //line = charts.LineChart(series);
     return line;
